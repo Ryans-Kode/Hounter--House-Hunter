@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,6 +11,7 @@
     <title>Hounter</title>
 </head>
 <body>
+    <img src="assets/Color Blur.png" alt="" id="corner-blur">
     <Navbar>
         <div class="logo-container">
             <svg id="Navbar-logo" width="36" height="36" viewBox="0 0 36 36" fill="none">
@@ -31,28 +33,93 @@
                 </a>
         </div>
     </Navbar>
-    <div class="hero-search">
+    <div class="hero-left">
         <h2>Find The Place To</br> Live <span id="special-words">Your Dreams</span> <br>Easily Here</h2>
         <p>Everything you need about finding your place to live will be here, where it will be easier for you </p>
         <div class="search-container">
-            <form action="" method="post">
-                <label for="search-input">
-                    <img src="./assets/fluent_location-16-filled.svg" alt="location image" id="location-marker">
-                </label>  
-                <input type="text" class="seatch-input" placeholder="Search for the location you want!">
-                <label for="submitButton">
-                    <button type="submit" id="search-button"> Search
-                        <!-- <img src="assets/eva_arrow-ios-forward-fill.svg" alt=""> -->
-                    </button>
-                </label>
-            
-            </form>
-                    
+            <div class="search-bar">
+                <form action="" method="post">
+                        <img src="./assets/fluent_location-16-filled.svg" alt="location image" id="location-marker">
+                        <input type="text" class="seatch-input" placeholder="Search for the location you want!">
+                        <button type="submit" id="search-button"> Search
+                            <img src="assets/eva_arrow-ios-forward-fill.svg" alt="">
+                        </button>
+                </form>
+            </div>  
+        </div>
+        <div class="hero-links">
+            <h4>Our Partnership</h4>
+            <div class="image-row">
+                <img src="assets/travel.png" alt="traveokla">
+                <img src="assets/tiket.png" alt="tiket.com">
+                <img src="assets/airbnb.png" alt="airbnb">
+                <img src="assets/traveladvisor.png" alt="tripAdvisor">
+            </div>
         </div>
     </div>
 
-<div class="hero-image-container">
-        <img src="./assets/hero.png" alt="">    
+<div class="hero-right-container">
+    <div class="vector-container-red">
+        <img src="assets/Vector 8.svg" alt="" id="vector-red">
+    </div>
+    <div class="vector-container-orange">
+        <img src="assets/Vector 4.svg" alt="" id="vector-red">
+    </div>
+    <div class="vector-container-blue">
+        <img src="assets/Vector 9.svg" alt="" id="vector-red">
+    </div>
+    <img src="./assets/hero.png" alt="">    
+    <div class="hero-image-carousel">
+        <div class="card-container">
+            <div class="card">
+                <img src="assets/carouselHouse01.png" alt="House">
+                <div class="house-details">
+                    <header>Manhattan Style</header>
+                        <p>Lorem ipsum dolor sit amet, conser adipiscing elit</p>
+
+                    <div class="review">
+                        <img src="assets/star.png" alt="">
+                        <p>4.8 (400+ Review)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <img src="assets/carouselHouse02.png" alt="House">
+                <div class="house-details">
+                    <header>New House For Your Future Future</header>
+                        <p>Lorem ipsum dolor sit amet, conser adipiscing elit</p>
+
+                    <div class="review">
+                        <img src="assets/star.png" alt="">
+                        <p>4.8 (400+ Review)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <img src="assets/carouselHouse02.png" alt="House">
+                <div class="house-details">
+                    <header>New House For Your Future Future</header>
+                        <p>Lorem ipsum dolor sit amet, conser adipiscing elit</p>
+
+                    <div class="review">
+                        <img src="assets/star.png" alt="">
+                        <p>4.8 (400+ Review)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pagination-container">
+        <div class="pagination-dot" id="0"></div>
+        <div class="pagination-dot" id="1"></div>
+        <div class="pagination-dot" id="2"></div>
+    </div>
+    
 </div>
+
 </body>
 </html>
