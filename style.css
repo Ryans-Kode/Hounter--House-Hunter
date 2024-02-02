@@ -36,6 +36,7 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+
 }
 li {
   list-style-type: none;
@@ -44,15 +45,19 @@ a {
   text-decoration: none;
 }
 
-#corner-blur {
+#corner-blur01 {
   position:absolute;
-  z-index: -2
+  z-index: -1;
 }
+
 navbar {
+  position: absolute;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 54px 120px;
+  z-index: 1;
 }
 
 #navbar-title {
@@ -131,54 +136,25 @@ navbar {
   text-transform: capitalize;
 }
 
-.hero-right-container {
-  position: absolute;
-  min-width: 600px;
-  min-height: 720px;
-  right: 0%;
-  top: 0%;
-  width: 50%;
-  z-index: -1;
-  overflow: hidden;
+
+.heroes-container {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  margin-bottom: 120px;
 }
 
-.hero-right-container > img {
-  width: 100%; 
-  height: 100%;
-  object-fit: cover;
-  border-bottom-left-radius: 80px
-}
+/* <------Left Side --------> */
 
-.vector-container-red {
-  position:absolute;
-  top: 19%;
-  left:11%;
-  z-index: 1;
-}
-
-.vector-container-orange {
-  position:absolute;
-  top: 28.5%;
-  right:17%;
-  z-index: 1;
-}
-
-.vector-container-blue {
-  position:absolute;
-  bottom: 38%;
-  right:13%;
-  z-index: 1;
-}
-
-
-.hero-left {
+.hero-left-container {
     width: 50%;
     height: 100%;
     padding-left: 120px;
     padding-right: 104px;
+    padding-top: 160px;
 }
 
-.hero-left > h2 {
+.hero-left-container > h2 {
     color: #1B1C57;
     font-size: 40px;
     font-family: Lexend;
@@ -198,7 +174,7 @@ navbar {
     text-shadow: 0px 8px 8px  #0000002e;
 }
 
-.hero-left > p {
+.hero-left-container > p {
     color: #626687c2;
     font-family: Lexend;
     font-size: 16px;
@@ -230,7 +206,6 @@ form {
 }
 
 .search-container input {
-    /* background-color: #047857; */
   font-family: Lexend;
   font-size: 14px;
   font-weight: 500;
@@ -248,8 +223,6 @@ form {
 .search-container input:focus {
   outline: none;
 }
-
-
 
 #search-button {
   position: relative;
@@ -288,16 +261,71 @@ form {
 }
 .image-row {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  gap:32px;
+  /* gap:32px; */
 }
 .image-row > img {
   width:82px;
   height: 64px;
+  margin-left: 32px;
+
 }
 
 .image-row > img:nth-child(1) {
   padding-bottom: 6px;
+}
+
+/* <------ Right Side --------> */
+
+
+
+
+.hero-right-container {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  /* display: inline-block;
+  min-width: 600px;
+  min-height: 720px;
+  right: 0%;
+  top: 0%;
+  width: 50%; */
+  overflow: hidden;
+
+}
+
+.hero-right-image-container {
+  position:absolute;
+  height: 100%;
+  width: 100%;
+}
+.hero-right-image-container > img {
+  width: 100%; 
+  height: 94%;
+  object-fit:cover;
+  border-bottom-left-radius: 80px;
+}
+
+.vector-container-red {
+  position:absolute;
+  top: 19%;
+  left:11%;
+  z-index: 1;
+}
+
+.vector-container-orange {
+  position:absolute;
+  top: 28.5%;
+  right:17%;
+  z-index: 1;
+}
+
+.vector-container-blue {
+  position:absolute;
+  bottom: 38%;
+  right:13%;
+  z-index: 1;
 }
 
 .hero-image-carousel {
@@ -306,27 +334,25 @@ form {
   transform: translateX(calc(var(--slider-index) * -100%));
   transition: transform 250ms ease-in-out;
   position: absolute;
-  bottom:7%;
+  bottom:12%;
   left:3%;
   display: flex;
   flex-wrap: nowrap;
-  flex-grow: 1;
   width: 60%;
-  margin-left: 24px;
-
+  justify-content:left;
+  gap:12px;
+  /* margin-left: 24px; */
   
 }
 
-.card-container {
+.hero-image-carousel > .card-container {
   flex: 0 0 calc(100% / var(--items-per-screen));
 }
 
 
 
-.card-container:hover {
-  cursor: pointer;
-}
-.card {
+
+.hero-image-carousel > .card-container >  .card {
   display: flex;
   background: #FFFFFF;
   max-width: 420px;
@@ -335,12 +361,13 @@ form {
   box-shadow: 0px 10px 8px 0px #48484833;
   padding: 12px 32px 12px 12px;
   border-radius: 32px;
+  /* min-width: 400px; */
 
 }
-
-.card > img {
-
+.card:hover {
+  cursor: pointer;
 }
+
 
 .house-details {
   margin-left: 12px;
@@ -396,7 +423,7 @@ form {
 
 .pagination-container {
   position: absolute;
-  bottom: 2%;
+  bottom: 7%;
   left: 10%;
   display: flex;
   gap:12px;
@@ -404,6 +431,7 @@ form {
   height:25px;
 }
 .pagination-dot {
+
   content: '';
   border-radius: 50px;
   width: 12px;
@@ -413,5 +441,405 @@ form {
 
 .pagination-dot:nth-child(1) {
   background-color: white;
+
+}
+
+/* <---------Feature House Carousel Section ----------> */
+
+.feature-house-container {
+  display: flex;
+  flex-wrap: wrap;
+  --feature-house-items-per-screen:4;
+  --feature-house-slider-index:0;
+  overflow: hidden;
+  width: 100%;
+  padding-left: 120px;
+}
+
+.feature-house-slider {
+  display: flex;
+  align-items: flex-start;
+  transform: translateX(calc(var(--feature-house-slider-index) * -90%));
+  transition: transform 250ms ease-in-out;
+}
+
+.feature-house-nav {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.feature-house-nav > h2 {
+font-family: Lexend;
+font-size: 32px;
+font-weight: 600;
+line-height: 40px;
+letter-spacing: 0px;
+text-align: left;
+color: #1B1C57;
+padding-top: 20px;
+padding-left: 8px;
+}
+
+.housing-type-buttons {
+  display: flex;
+  gap: 32px;
+}
+.housing-type-buttons > button {
+  display: flex;
+  color:#888B97;
+  background:#e0e3eb00;
+  font-family: Lexend;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0px;
+  text-align: left;
+  border-radius: 32px;
+  border: 1px solid #E0E3EB;
+  padding: 12px 24px;
+  gap:8px;
+  
+}
+.housing-type-buttons > button:nth-child(1) {
+  color:#10B981;
+  background: #D1FAE5;
+  border: none;
+}
+.carousel-chevrons {
+  padding-right:120px;
+}
+.carousel-chevrons > button  {
+  border: none;
+  background: #10B981;
+  padding: 12px 16px 12px 16px;
+  border-radius: 32px;
+  margin-left:16px;
+}
+.carousel-chevrons > button > img {
+  width:24px;
+
+}
+.carousel-chevrons > button:nth-child(1) > img {
+  transform: rotate(180deg);
+  color: black;
+}
+.carousel-chevrons > button:nth-child(1) {
+  background: #E0E3EB;
+
+}
+
+.feature-house-card {
+  flex: 0 0 calc(100% /var(--feature-house-items-per-screen));  
+  /* padding-left: 2.5rem; */
+  margin-right: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-house-card > .img-container {
+}
+
+
+.feature-house-card > .img-container > img {
+  object-fit: cover;
+  width: 340px;
+  height: 382px;
+  border-radius: 24px;
+  aspect-ratio: 17/9;
+
+}
+
+.feature-house-card > .housing-details {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.housing-details > .house-name {
+  font-family: Lexend;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: left;
+
+}
+
+ .housing-details > .house-price {
+  font-family: Lexend;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #3C4563;
+  margin-top: 8px;
+}
+
+.realtor-card {
+  display: flex;
+  width: 100%;
+}
+
+
+.realtor-card > img {
+  width:40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.realtor-card > .details {
+  margin-left: 16px;
+}
+
+.realtor-card > .details > .name {
+  font-family: Lexend;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #0E1735;
+  margin-bottom: 2px;
+
+}
+
+.realtor-card > .details > .location {
+  font-family: Lexend;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #888B97;
+
+}
+
+/* <------ Ready To Sell Section --------> */
+
+.ready-to-sell-container {
+  display: flex;
+  width: 100%;
+  padding-top: 120px;
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-bottom: 120px;
+}
+
+.ready-to-sell-container > .left-side {
+  position: relative;
+  width: 50%;
+  padding-top: 60px;
+  padding-right: 130px;
+
+}
+
+.left-side > .bar {
+  position: absolute;
+  top:22px;
+  left:-45px;
+  width: 32px;
+  height: 1px;
+  background-color: #F59E0B;
+}
+
+.left-side > span {
+  position: absolute;
+  top:12px;
+  font-family: Lexend;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #F59E0B;
+}
+
+
+
+.left-side > .blurb {
+  font-family: Lexend;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #1B1C57;
+}
+
+.left-side > .blurb > p {
+  font-family: Lexend;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0px;
+  text-align: left;
+  color:#626687;
+  opacity: 75%;
+  margin: 16px 0px 16px 0px;
+}
+
+.left-side > .details {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Lexend;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #3C4563;
+  padding-bottom: 58px;
+
+}
+
+.left-side > .details > h2 {
+  flex-basis: 100%;
+  margin-bottom: 22px;
+  font-family: Lexend;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #1B1C57;
+  opacity: 75%;
+
+} 
+
+.left-side >.details > p {
+  position: relative;
+  flex-basis: 50%;
+  padding-left: 48px;
+  margin-bottom: 20px;
+}
+
+.left-side > .details > p > img {
+  position: absolute;
+  bottom: -3px;
+  left: 0px;
+}
+
+
+.left-side > .contact {
+  position: relative;
+  display: flex;
+  /* margin-top: 58px; */
+  padding-right: 40px;
+}
+
+.left-side > .contact > .bar-grey {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top:-40px;
+  background-color: #F0F3FD;
+
+}
+
+
+.contact > .realtor-card > img {
+  width: 56px;
+  height: 56px;
+}
+.contact > button {
+  width: 163px;
+  height: 48px;
+  position: relative;
+  color: white;
+  background: #10B981;
+  font-family: Lexend;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+  border-radius: 32px;
+  border: none;
+  padding: 12px 16px 12px 40px;
+  margin:3px; 
+  text-wrap: nowrap;
+  
+}
+
+.contact > button > img {
+  position: absolute;
+  left: 10px;
+  bottom:12px;
+  width:24px;
+}
+
+/* <----------Right side container -----------> */
+
+.ready-to-sell-container{
+ position: relative; 
+}
+
+#corner-blur02 {
+  position:absolute;
+  right: 0px;
+  top:-150px;
+  z-index: -1;
+}
+
+.ready-to-sell-container > .right-side {
+  position: relative;
+  width: 50%;
+}
+
+.ready-to-sell-container > .right-side > .video-image-container {
+  position: absolute;
+  background-color: black;
+  margin-left: auto;
+  width: 488px;
+  height: 416px;
+  border-radius: 4px;
+  right:0px;
+  
+
+}
+
+.right-side > .video-image-container > img:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 80%;
+}
+
+.right-side > .video-image-container >  .inside-images {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.video-image-container  > img:nth-child(2) {
+  position: absolute;
+  width:296px;
+  height:168px;
+  bottom:-40px;
+  left: -40px;
+  border-radius: 4px;;
+}
+
+.video-image-container  > img:nth-child(3) {
+  position: absolute;
+  width:96px;
+  height:80px;
+  bottom: -40px;
+  right: 120px;
+  border-radius: 4px;;
+
+}
+
+.video-image-container  > img:nth-child(4) {
+  position: absolute;
+  width:96px;
+  height:80px;
+  bottom: -40px;
+  right: 15px;
+  border-radius: 4px;;
 
 }
