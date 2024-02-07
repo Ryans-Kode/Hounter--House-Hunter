@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  
     const fHCarouselBtnRight = document.getElementById("fhCarouselBtnRight")
     const fHCarouselBtnLeft = document.getElementById("fhCarouselBtnLeft")
     let count = 0;
@@ -32,5 +33,22 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderIndex.style.setProperty("--feature-house-slider-index", count)
         console.log(sliderIndex)
       })
+
+      var elem = document.querySelector('.main-carousel');
+      var flkty = new Flickity( elem, {
+        // options
+        imagesLoaded: true,
+        // contain: true,
+        wrapAround: true,
+        initialIndex: 1
+      });
+
+      // element argument can be a selector string
+      //   for an individual element
+      var flkty = new Flickity( '.main-carousel', {
+      });
+
 })
+
+
 
