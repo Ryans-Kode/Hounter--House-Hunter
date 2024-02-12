@@ -1,54 +1,73 @@
-document.addEventListener('DOMContentLoaded', () => {
-  
-    const fHCarouselBtnRight = document.getElementById("fhCarouselBtnRight")
-    const fHCarouselBtnLeft = document.getElementById("fhCarouselBtnLeft")
-    let count = 0;
 
+function fhSlider(btn) {
+  let slider = document.querySelector(".fh-slider");
+  let card = document.querySelector(".feature-house-card");
+  let rect = card.getBoundingClientRect();
+  let width = rect.width;
+  let margin = parseInt(getComputedStyle(card).getPropertyValue("margin-right"));
+  let cardWidth = margin + width + "px";
+  let currnetIndex = parseInt(
+    getComputedStyle(slider).getPropertyValue("--feature-house-slider-index")
+  );
+  let sliderChildren = slider.children.length - 1;
+
+  if (btn == "right") {
+    if (currnetIndex >= sliderChildren) return;
+    else {
+      slider.style.setProperty("--feature-house-slider-index", currnetIndex + 1);
+      slider.style.setProperty("--card-size", "-" + cardWidth);
+      console.log(`current Index: ${currnetIndex}, children: ${sliderChildren}`);
+    }
+  } else {
+    if (currnetIndex <= 0) return;
+    slider.style.setProperty("--feature-house-slider-index", currnetIndex - 1);
+    console.log(`current Index: ${currnetIndex}, children: ${sliderChildren}`);
+  }
+
+}
+
+document.addEventListener("DOMContentLoaded", () => {
  
-    document.addEventListener('mouseup', (e) => {
-        if(e.target.classList.contains('pagination-dot')) {
-            const carousel = document.querySelector(".hero-image-carousel");
-            // const index = parseInt(getComputedStyle(carousel).getPropertyValue("--slider-index"));
-            const dots = Array.from(document.querySelectorAll(".pagination-dot"));
-            dots.forEach( div => {
-                div.style.backgroundColor = 'rgba(255, 255, 255, 0.478)';
-            })
-            carousel.style.setProperty("--slider-index", e.target.id)
-            e.target.style.backgroundColor = 'white'
-    
-        }   
-      });
-    
-    
-      fHCarouselBtnRight.addEventListener('click', () => {
-        count++
-        const sliderIndex = document.querySelector(".feature-house-container")
-        sliderIndex.style.setProperty("--feature-house-slider-index",  count)
-        console.log(sliderIndex)
-      })
+  var elem = document.querySelector(".main-carousel");
+  var flkty = new Flickity(elem, {
+    // options
+    imagesLoaded: true,
+    // contain: true,
+    wrapAround: true,
+    initialIndex: 1,
+  });
 
-      fHCarouselBtnLeft.addEventListener('click', () => {
-        count--
-        const sliderIndex = document.querySelector(".feature-house-container")
-        sliderIndex.style.setProperty("--feature-house-slider-index", count)
-        console.log(sliderIndex)
-      })
+  // element argument can be a selector string
+  //   for an individual element
+  var flkty = new Flickity(".main-carousel", {});
 
-      var elem = document.querySelector('.main-carousel');
-      var flkty = new Flickity( elem, {
-        // options
-        imagesLoaded: true,
-        // contain: true,
-        wrapAround: true,
-        initialIndex: 1
-      });
+  const sliders = document.querySelectorAll("#drag");
 
-      // element argument can be a selector string
-      //   for an individual element
-      var flkty = new Flickity( '.main-carousel', {
-      });
+  sliders.forEach((slider) => {
+    let startX, scrollLeft, mouseDown;
 
-})
+    let startDragging = function (e) {
+      mouseDown = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+      console.log(scrollLeft, e.pageX);
+    };
+    let stopDragging = function (event) {
+      mouseDown = false;
+    };
+    slider.addEventListener("mousemove", (e) => {
+      e.preventDefault();
+      if (!mouseDown) {
+        return;
+      }
+      const x = e.pageX - slider.offsetLeft;
+      const scroll = x - startX;
+      slider.scrollLeft = scrollLeft - scroll;
+      console.log(x);
+    });
 
-
-
+    slider.addEventListener("mousedown", startDragging);
+    slider.addEventListener("mouseup", stopDragging);
+    slider.addEventListener("mouseleave", stopDragging);
+  });
+});

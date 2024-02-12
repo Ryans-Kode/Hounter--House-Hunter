@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="flickity.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <title>Hounter</title>
 </head>
@@ -61,9 +62,9 @@
     
     <div class="hero-right-container">
         <div class="hero-right-image-container">
-            <img src="./assets/hero2.png" alt="">  
+            <img src="./assets/heroEdit.png" alt="">  
         </div>
-        <!-- <div class="vector-overlays">
+        <div class="vector-overlays">
             <div class="vector-container-red">
                 <img src="assets/Vector 8.svg" alt="" id="vector-red">
             </div>
@@ -74,57 +75,39 @@
                 <img src="assets/Vector 9.svg" alt="" id="vector-red">
             </div>
         </div>
-      -->
-         
-        <div class="hero-image-carousel">
-            <div class="card-container">
-                <div class="card">
-                    <img src="assets/carouselHouse01.png" alt="House">
-                    <div class="house-details">
-                        <header>Manhattan Style</header>
-                            <p>Lorem ipsum dolor sit amet, conser adipiscing elit</p>
-    
-                        <div class="review">
-                            <img src="assets/star.png" alt="">
-                            <p>4.8 (400+ Review)</p>
-                        </div>
-                    </div>
+     
+      <div class="hero-carousel">
+        <div class="slider" id="drag">
+            <div class="card" id="">
+                <div class="headshot-container">
+                    <img src="assets/headShot05.jpeg" class="headshot-items">
+                    <img src="assets/headShot10.jpeg" class="headshot-items">
+                    <img src="assets/headShot01.jpeg" class="headshot-items">
+                </div>
+                <div class="house-details">
+                    <header>1K+ People</header>
+                        <p>Successfully Getting Home</p>
                 </div>
             </div>
-            <div class="card-container">
-                <div class="card">
-                    <img src="assets/carouselHouse02.png" alt="House">
-                    <div class="house-details">
-                        <header>New House For Your Future Future</header>
-                            <p>Lorem ipsum dolor sit amet, conser adipiscing elit</p>
-    
-                        <div class="review">
-                            <img src="assets/star.png" alt="">
-                            <p>4.8 (400+ Review)</p>
-                        </div>
-                    </div>
+            <div class="card">
+                <img src="assets/blogLarge01.jpeg">
+                <div class="house-details">
+                    <header>56 Houses</header>
+                        <p>Sold Monthly</p>
                 </div>
             </div>
-            <div class="card-container">
-                <div class="card">
-                    <img src="assets/carouselHouse02.png" alt="House">
-                    <div class="house-details">
-                        <header>New House For Your Future Future</header>
-                            <p>Lorem ipsum dolor sit amet, conser adipiscing elit</p>
-    
-                        <div class="review">
-                            <img src="assets/star.png" alt="">
-                            <p>4.8 (400+ Review)</p>
-                        </div>
-                    </div>
+            <div class="card">
+                <img src="assets/headShot12.jpeg" class=""">
+                <div class="house-details">
+                    <header>4K+ Seekers</header>
+                        <p>People Looking for New Homes</p>
                 </div>
             </div>
+      
         </div>
-        <div class="pagination-container">
-            <div class="pagination-dot" id="0"></div>
-            <div class="pagination-dot" id="1"></div>
-            <div class="pagination-dot" id="2"></div>
-        </div>  
+    </div> 
+      
+       
     </div>
 </div>
 
@@ -140,170 +123,157 @@
 
 
         </div>
-        <div class="carousel-chevrons">
-            <button id="fhCarouselBtnLeft"> 
+        <div class="carousel-chevrons" >
+            <button id="fhCarouselBtnLeft"  onclick="fhSlider('left')"> 
                 <img src="assets/eva_arrow-ios-forward-fill.svg" alt="" >
             </button>
-            <button id="fhCarouselBtnRight">
+            <button id="fhCarouselBtnRight" onclick="fhSlider('right')" >
                 <img src="assets/eva_arrow-ios-forward-fill.svg" alt="" >
             </button>
         </div>
     </div>
-    <div class="feature-house-slider">
+    <div class="feature-house-wrapper">
     
-        <div class="feature-house-card">
-            <div class="img-container">
-                <img src="./assets/featureHouse01.png" alt="House">
-            </div>
-            <div class="housing-details">
-                <h2 class="house-name"> Roseland House</h2>
-            <div class="house-price">$1,750,000</div>
-           </div> 
-        <div class="realtor-card">
-            <img src="./assets/headShot01.jpeg" alt="">
-            <div class="details">
-                <div class="name"> Dianne Russell</div>
-                <div class="location">Manchester, Kentucky</div>
-            </div>
-        </div>
-
-        </div>
+    <div class="fh-slider"  >
         <div class="feature-house-card">
             <div class="img-container">
                 <img src="./assets/featureHouse02.jpeg" alt="House">
             </div>
-           <div class="housing-details">
+        <div class="housing-details">
             <h2 class="house-name"> Woodlandside</h2>
             <div class="house-price">$2,750,000</div>
-           </div> 
-           <div class="realtor-card">
+        </div> 
+        <div class="realtor-card">
             <img src="./assets/headShot02.jpeg" alt="">
             <div class="details">
                 <div class="name">Robert Fox</div>
                 <div class="location">Dr. San Jose, South Dakota</div>
             </div>
         
-           </div>
+        </div>
         </div>
         <div class="feature-house-card">
             <div class="img-container">
                 <img src="./assets/featureHouse03.jpeg" alt="House">
             </div>
-           <div class="housing-details">
+        <div class="housing-details">
             <h2 class="house-name"> The Old Lighthouse</h2>
             <div class="house-price">$4,750,000</div>
-           </div> 
-           <div class="realtor-card">
+        </div> 
+        <div class="realtor-card">
             <img src="./assets/headShot03.jpeg" alt="">
             <div class="details">
                 <div class="name"> Ronald Richards</div>
                 <div class="location">Santa Ana, Illinois</div>
             </div>
         
-           </div>
-        </div>  <div class="feature-house-card">
+        </div>
+        </div> 
+        <div class="feature-house-card">
             <div class="img-container">
                 <img src="./assets/featureHouse04.jpeg" alt="House">
             </div>
-           <div class="housing-details">
+        <div class="housing-details">
             <h2 class="house-name"> Cosmo's House</h2>
             <div class="house-price">$1,750,000</div>
-           </div> 
-           <div class="realtor-card">
+        </div> 
+        <div class="realtor-card">
             <img src="./assets/headShot04.jpeg" alt="">
             <div class="details">
                 <div class="name"> Jenny Wilson</div>
                 <div class="location">Preston Rd. Inglewood, Maine 98380</div>
             </div>
         
-           </div>
+        </div>
         </div>
         <div class="feature-house-card">
             <div class="img-container">
                 <img src="./assets/featureHouse01.png" alt="House">
             </div>
-           <div class="housing-details">
+        <div class="housing-details">
             <h2 class="house-name"> Roseland House</h2>
             <div class="house-price">$1,750,000</div>
-           </div> 
-           <div class="realtor-card">
+        </div> 
+        <div class="realtor-card">
             <img src="./assets/headShot01.jpeg" alt="">
             <div class="details">
                 <div class="name"> Dianne Russell</div>
                 <div class="location">Manchester, Kentucky</div>
             </div>
         
-           </div>
+        </div>
         </div>
         <div class="feature-house-card">
             <div class="img-container">
                 <img src="./assets/featureHouse01.png" alt="House">
             </div>
-           <div class="housing-details">
+        <div class="housing-details">
             <h2 class="house-name"> Roseland House</h2>
             <div class="house-price">$1,750,000</div>
-           </div> 
-           <div class="realtor-card">
+        </div> 
+        <div class="realtor-card">
             <img src="./assets/headShot01.jpeg" alt="">
             <div class="details">
                 <div class="name"> Dianne Russell</div>
                 <div class="location">Manchester, Kentucky</div>
             </div>
         
-           </div>
+        </div>
         </div>
         <div class="feature-house-card">
             <div class="img-container">
                 <img src="./assets/featureHouse01.png" alt="House">
             </div>
-           <div class="housing-details">
+        <div class="housing-details">
             <h2 class="house-name"> Roseland House</h2>
             <div class="house-price">$1,750,000</div>
-           </div> 
-           <div class="realtor-card">
+        </div> 
+        <div class="realtor-card">
             <img src="./assets/headShot01.jpeg" alt="">
             <div class="details">
                 <div class="name"> Dianne Russell</div>
                 <div class="location">Manchester, Kentucky</div>
             </div>
         
-           </div>
+        </div>
         </div>
         <div class="feature-house-card">
             <div class="img-container">
                 <img src="./assets/featureHouse01.png" alt="House">
             </div>
-           <div class="housing-details">
+        <div class="housing-details">
             <h2 class="house-name"> Roseland House</h2>
             <div class="house-price">$1,750,000</div>
-           </div> 
-           <div class="realtor-card">
+        </div> 
+        <div class="realtor-card">
             <img src="./assets/headShot01.jpeg" alt="">
             <div class="details">
                 <div class="name"> Dianne Russell</div>
                 <div class="location">Manchester, Kentucky</div>
             </div>
         
-           </div>
+        </div>
         </div>
         <div class="feature-house-card">
             <div class="img-container">
                 <img src="./assets/featureHouse01.png" alt="House">
             </div>
-           <div class="housing-details">
+        <div class="housing-details">
             <h2 class="house-name"> Roseland House</h2>
             <div class="house-price">$1,750,000</div>
-           </div> 
-           <div class="realtor-card">
+        </div> 
+        <div class="realtor-card">
             <img src="./assets/headShot01.jpeg" alt="">
             <div class="details">
                 <div class="name"> Dianne Russell</div>
                 <div class="location">Manchester, Kentucky</div>
             </div>
         
-           </div>
+        </div>
         </div>
     </div>
+  </div>
+      
 </div>
 
 <div class="ready-to-sell-container">
@@ -612,9 +582,10 @@
 
 </div>
 
+<script src="script.js"></script>
 
 <script src="./flickity.js"></script>
-<script src="script.js"></script>
+
 
 </body>
 </html>
