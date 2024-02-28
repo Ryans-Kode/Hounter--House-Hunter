@@ -1,8 +1,8 @@
 
 
 function fhSlider(btn) {
-  let slider = document.querySelector(".fh-slider");
-  let card = document.querySelector(".feature-house-card")
+  let slider = document.querySelector(".fhouse-slider");
+  let card = document.querySelector(".fhouse-card")
   let rect = card.getBoundingClientRect();
   let width = rect.width;
   let margin = parseInt(getComputedStyle(card).getPropertyValue("margin-right"));
@@ -27,27 +27,10 @@ function fhSlider(btn) {
   }
 }
 
-let isDisplayed = false;
-
-function hamburgerMenu() {
-  const navLinks = document.querySelector(".nav-links");
-  const overlay = document.querySelector(".overlay")
-  console.log(isDisplayed);
-  if (!isDisplayed) {
-    isDisplayed = true;
-    navLinks.style.display = "flex";
-    overlay.style.display = "block"
-  } else {
-    isDisplayed = false;
-    navLinks.style.display = "none";
-  }
-  console.log(navLinks.style.display);
-}
-
 const fragment = document.createDocumentFragment();
 
 function appendPreviousCards(houseType){
-  let slider = document.querySelector(".fh-slider");
+  let slider = document.querySelector(".fhouse-slider");
   let arr = Array.from(fragment.children);
   arr.forEach(e => { 
     if(e.id == houseType){
@@ -55,7 +38,7 @@ function appendPreviousCards(houseType){
   }})
 }
 function removeNodes(houseType) {
-  const cards = document.querySelectorAll(".feature-house-card");
+  const cards = document.querySelectorAll(".fhouse-card");
   cards.forEach((e) => {
     if (e.id != houseType) {
       fragment.append(e)  
@@ -64,7 +47,7 @@ function removeNodes(houseType) {
 }
 
 function houseTypeSelector(houseType) {
-  let slider = document.querySelector(".fh-slider");
+  let slider = document.querySelector(".fhouse-slider");
   slider.style.setProperty("--feature-house-slider-index", '0');
 
 
@@ -80,15 +63,15 @@ function houseTypeSelector(houseType) {
     }
   }
 
-const buttons = document.querySelectorAll(".housing-button")
+const buttons = document.querySelectorAll(".js-fhouse__button")
 
 buttons.forEach(btn => {
   btn.addEventListener('click', ()=> {
     buttons.forEach(btn =>  {                 //Revert button / img back to default state
-      btn.classList.remove('button-active')
+      btn.classList.remove("fhouse__button--active")
       btn.children[0].src = `assets/${btn.id}.svg`
     });
-    btn.classList.add("button-active")       // Add 'active' class and green image to button
+    btn.classList.add("fhouse__button--active")       // Add 'active' class and green image to button
     btn.children[0].src = `assets/green${btn.id}.svg`
   
   })
