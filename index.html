@@ -14,6 +14,7 @@
     <title>Hounter</title>
 </head>
 <body>
+    <div class="lrg-container">
     <navbar class="navbar">
             <input type="checkbox" id="check">
         <label for="check" class="icons">
@@ -21,11 +22,12 @@
             <i class="bx bx-x"id="close-icon"></i>
         </label>
         <div class="navbar__logo-container">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
                 <path d="M0 4C0 1.79086 1.79086 0 4 0H28C30.2091 0 32 1.79086 32 4V8C32 21.2548 21.2548 32 8 32H4C1.79086 32 0 30.2091 0 28V4Z" fill="#F59E0B"/>
                 <path d="M4 8C4 5.79086 5.79086 4 8 4H32C34.2091 4 36 5.79086 36 8V12C36 25.2548 25.2548 36 12 36H8C5.79086 36 4 34.2091 4 32V8Z" fill="#4BE4C9"/>
-            </svg>
-            <p id="navbar__title"> Hounter </p>
+            </svg> -->
+            <img src="assets/logo.svg" class="hounter-logo" alt="hounter logo">
+            <h1 id="navbar__title"> Hounter </h1>
         </div>
         <div class="navbar__links">
                 <a href="#footer">About Us</a>
@@ -48,7 +50,7 @@
             <div class="search-container">
                 <div class="search-bar">
                     <form id="searchForm" action="#" method="GET">
-                            <img src="./assets/fluent_location-16-filled.svg" alt="location image" id="location-marker">
+                            <img src="./assets/locationMarker.svg" alt="location image" id="location-marker">
                             <input type="text" id="searchQuery" class="search__input" placeholder="Search for the location you want!">
                             <button type="submit" class="search__button"> Search
                                 <img src="assets/eva_arrow-ios-forward-fill.svg"
@@ -110,11 +112,11 @@
         <div class="fhouse__nav">
             <div class="fhouse__bar"></div>
             <p class="fhouse__aside">Our Recommendation</p>
-            <h2 class="fhouse__title">Feature House</h2>
+            <h2 class="fhouse__title">Feature House</h2>                
             <div class="fhouse__buttons-container">
-                <button class="fhouse__button js-fhouse__button" id="house" onclick="houseTypeSelector('house')"> <img src="assets/house.svg" alt="House"> House </button>
-                <button class="fhouse__button js-fhouse__button"id="villa" onclick="houseTypeSelector('villa')"> <img src="assets/villa.svg" alt="Villa"> Villa </button>
-                <button class="fhouse__button js-fhouse__button"id="apartment"  onclick="houseTypeSelector('apartment')"> <img src="assets/apartment.svg" alt="Apartment"> Apartment </button>
+                <button class="fhouse__button js-fhouse__button" id="house" onclick="houseTypeSelector('house')"> <img src="assets/house.svg" class="fhouse__button-img" alt="House"> House </button>
+                <button class="fhouse__button js-fhouse__button"id="villa" onclick="houseTypeSelector('villa')"> <img src="assets/villa.svg" class="fhouse__button-img" alt="Villa"> Villa </button>
+                <button class="fhouse__button js-fhouse__button"id="apartment"  onclick="houseTypeSelector('apartment')"> <img src="assets/apartment.svg" class="fhouse__button-img" alt="Apartment"> Apartment </button>
             </div>
             <div class="fhouse-chevrons" >
                 <button class="fhouse-chevrons__button" id="fhCarouselBtnLeft"  onclick="fhSlider('left')"> 
@@ -306,10 +308,10 @@
             </div>
             <div class="section-details">
                 <h2 class="section-details__title">House Detail</h2>
-                <p class="section-details__para"><img src="./assets/bed.svg" alt="Bedrooms">4 Bedrooms</p>
-                <p class="section-details__para"><img src="./assets/bath 1.svg" alt="Bathrooms">2 Bathrooms</p>
-                <p class="section-details__para"><img src="/assets/car.svg" alt="Garage">1 Carport</p>
-                <p class="section-details__para"><img src="./assets/stairs.svg" alt="Foors" srcset="">2 Floors</p>
+                <p class="section-details__para"><img src="./assets/bed.svg" alt="Bedrooms" class="para-icon">4 Bedrooms</p>
+                <p class="section-details__para"><img src="./assets/bath 1.svg" alt="Bathrooms" class="para-icon">2 Bathrooms</p>
+                <p class="section-details__para"><img src="/assets/car.svg" alt="Garage" class="para-icon">1 Carport</p>
+                <p class="section-details__para"><img src="./assets/stairs.svg" alt="Foors" class="para-icon">2 Floors</p>
             </div>
             <div class="contact">
                 <div class="contact-bar-grey"></div>
@@ -585,6 +587,8 @@
     <img id="corner-blur-2" src="./assets/footerBlur01.png">
 
     </div>
+    </div>
+   
     <script src="script.js"></script>
     <script src="./flickity.js"></script>
 </body>
