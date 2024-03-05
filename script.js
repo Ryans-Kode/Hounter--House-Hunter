@@ -1,4 +1,12 @@
 
+const checkbox = document.getElementById('check');
+const label = document.querySelector('.icons');
+
+label.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        checkbox.checked = !checkbox.checked;
+    }
+});
 
 function fhSlider(btn) {
   let slider = document.querySelector(".fhouse-slider");
@@ -91,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // element argument can be a selector string
   //   for an individual element
-  var flkty = new Flickity(".main-carousel", {});
+  // var flkty = new Flickity(".main-carousel", {});
 
   const sliders = document.querySelectorAll("#drag");
 

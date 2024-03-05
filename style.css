@@ -154,6 +154,10 @@ a {
 #check {
   display: none;
 }
+.icons:focus {
+  outline: 2px solid #047857;
+}
+
 
 .icons {
   position: absolute;
@@ -297,7 +301,7 @@ form {
   line-height: 2em;
   letter-spacing: 0px;
   text-align: left;
-  color: #888b97;
+  color: #696b75;
   opacity: 90%;
 
 }
@@ -343,7 +347,10 @@ form {
   height: 94%;
   object-fit: cover;
   border-bottom-left-radius: 5em;
-  animation: fadeOut 2s ease forwards;
+  user-select: none;
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; 
 }
 
 .hero-carousel {
@@ -352,6 +359,8 @@ form {
   left: 0px;
   /* display: flex; */
   width: 100%;
+  -webkit-overflow-scrolling: touch;
+
 }
 
 .hero-carousel__slider {
@@ -363,6 +372,7 @@ form {
   box-shadow: inset 15px rgba(0, 0, 0, 1);
   overflow-x: auto;
   scrollbar-width: none;
+  transition: transform 1.3s ease;
 }
 
 .hero-carousel__slider::-webkit-scrollbar {
@@ -375,12 +385,15 @@ form {
   cursor: grab;
   cursor: -moz-grab;
   cursor: -webkit-grab;
+  transition: none;
+
 }
 
 #drag:active {
   cursor: grabbing;
   cursor: -moz-grabbing;
   cursor: -webkit-grabbing;
+  transition: none;
 }
 
 .hero-carousel__card {
@@ -396,13 +409,22 @@ form {
   gap: 1em;
   scroll-snap-align: start;
   flex-shrink: 0;
+  pointer-events: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; 
 }
+
 
 
 .hero-carousel__card > img {
   width: 3.5em;
   height: 3.5em;
   border-radius: 1.5em;
+  pointer-events: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; 
 }
 
 .hero-carousel__card:nth-child(1) {
@@ -422,7 +444,12 @@ form {
   display: flex;
   align-items: center;
   height: 3.5em;
-  width: 7em
+  width: 7em;
+  pointer-events: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; 
+
 }
 
 .headshot-item {
@@ -431,6 +458,11 @@ form {
   height: 3.5em;
   border: 3px solid #ffffff;
   border-radius: 2em;
+  pointer-events: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; 
+
 }
 
 .headshot-item:nth-child(1) {
@@ -459,6 +491,11 @@ form {
   color: #1b1c57;
   white-space: nowrap;
   /* margin-bottom: 4px; */
+  pointer-events: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; 
+
 }
 
 .house-details__para {
@@ -470,6 +507,10 @@ form {
   color: #5d6c8f;
   /* margin-bottom: 8px; */
   white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; 
 }
 
 
@@ -1336,7 +1377,7 @@ form {
   justify-content: space-between;
   width: 85%;
   min-width: 25em;
-  background-image: url("./assets/bannerBackround.png");
+  background-image: url("./assets/bannerBackround.webp");
   background-size: cover;
   background-position: center;
   margin: 0 auto;
@@ -1565,7 +1606,7 @@ form {
   line-height: 1.125em;
   letter-spacing: 0px;
   text-align: center;
-  color: #888b97;
+  color: #626687;
   margin-bottom: 1.125em;
 }
 
@@ -1711,7 +1752,10 @@ form {
       display: inline-flex;
       color:#f59e0b;
       font-size: 48px;
+    }
 
+    .focus:focus-within {
+      outline :1px solid red;
     }
 
     .icons #close-icon {
@@ -1855,15 +1899,8 @@ form {
 @media (max-width: 780px) {
   .footer {
     flex-wrap: wrap;
-    /* justify-content: space-between; */
   }
-  .footer__site-information{
-    /* flex-basis: 25%; */
-  }
-  .column {
-    /* flex-basis: 25%;
-    flex-grow: 0; */
-  }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -1944,10 +1981,6 @@ form {
 
   .time-stamp {
     margin-top: 8px;
-  }
-
-  .blog-details{
-    /* padding-left: 8px; */
   }
 
   .fhouse__nav {
@@ -2065,6 +2098,10 @@ form {
     font-size: 4px;
   }
 
+  .tags {
+    font-size: 1rem;
+  }
+
   .fhouse-slider {
     margin:16px;
   }
@@ -2166,41 +2203,6 @@ form {
     /* background:#d1fae5; */
   }
 }
-
-
-/* @media(max-width:160rem) {
-  html {
-    font-size: 1.75rem;
-  }
-} */
-
-/* @media(max-width:3840px) {
-  html {
-    font-size: 1.5rem;
-  }
-} */
-
-
-/* @media(max-width:1920px) {
-  html {
-    font-size: 1.3125rem;
-  }
-}
-
-
-
-@media(max-width:1715px) {
-  html {
-    font-size: 1.1875rem;
-  }
-}
-
-
-@media(max-width:1440px) {
-  html {
-    font-size: 1rem;
-  }
-} */
 
 
 
